@@ -1,0 +1,25 @@
+
+<h2 mat-dialog-title>{{data.title}}</h2>
+<mat-dialog-content class="mat-typography" style="max-width: fit-content;">
+
+  {{data.content}}
+  </mat-dialog-content>
+
+<!-- <h1 mat-dialog-title></h1> -->
+
+<br>
+<div style="margin-top: 10px;">
+
+<button
+
+matTooltip="Copy"
+mat-mini-fab color="primary" style="margin-bottom: 30px;"  (click)="openSnackBar('', '')" ngxClipboard [cbContent]= data.content aria-label="Example icon button with a menu icon">
+  <mat-icon >content_copy</mat-icon>
+</button>
+
+<button style="float:right" class="mat-raised-button" (click)="close()">Close</button>
+</div>
+
+
+
+

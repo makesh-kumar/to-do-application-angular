@@ -1,0 +1,130 @@
+<app-practise-home></app-practise-home>
+
+<div class="con">
+
+  <br><br>
+<div class = "mobBtn" >
+  <mat-grid-list cols="4" rowHeight="2:1" style="background-color: whitesmoke; max-height: 50%;" >
+
+    <mat-grid-tile style="height: min-content;">
+    </mat-grid-tile>
+    <mat-grid-tile style="height: min-content;">
+      <button mat-raised-button color="primary" (click)="add()">New
+        <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+      </button>
+    </mat-grid-tile>
+ <mat-grid-tile>
+      <button  mat-raised-button color="primary" (click)="view()">View
+        <mat-icon aria-hidden="false" aria-label="Example home icon">view_list</mat-icon>
+      </button>
+    </mat-grid-tile>
+
+    <mat-grid-tile style="height: min-content;">
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>
+
+
+<div class = "deskBtn">
+  <mat-grid-list cols="6" rowHeight="5:1" style="background-color: whitesmoke; max-height: 50%;" >
+
+    <mat-grid-tile style="height: min-content;">    </mat-grid-tile>
+
+    <mat-grid-tile style="height: min-content;">     </mat-grid-tile>
+
+    <mat-grid-tile style="height: min-content;">
+      <button (click)="add()" mat-raised-button color="primary">New
+        <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+      </button>
+    </mat-grid-tile>
+
+
+ <mat-grid-tile>
+      <button  (click)="view()" mat-raised-button color="primary">View
+        <mat-icon aria-hidden="false" aria-label="Example home icon">view_list</mat-icon>
+      </button>
+    </mat-grid-tile>
+
+    <mat-grid-tile style="height: min-content;">     </mat-grid-tile>
+
+    <mat-grid-tile style="height: min-content;">     </mat-grid-tile>
+
+
+  </mat-grid-list>
+</div>
+
+<br><br>
+
+
+  <mat-form-field  style="margin-left: 20px;">
+    <mat-label>Search</mat-label>
+    <input matInput  (input)="chg()" [(ngModel)]="searchVal" name = "searchVal" placeholder="Search.." >
+  </mat-form-field>
+
+
+<div class = "view" *ngIf= empty >
+  <br>
+  <mat-card >
+    <br><br><br><br><br><br><br>
+    <h2 style="text-align: center;">NOTES EMPTY !</h2>
+    <br><br><br><br><br><br><br>
+  </mat-card>
+
+  <br>
+</div>
+
+<div class = "view" *ngIf= !empty>
+
+  <ng-container *ngFor="let i of viewData | paginate: { itemsPerPage: 5, currentPage: p }">
+<!-- <ng-container *ngFor="let i of viewData"> -->
+  <!-- <ng-container *ngIf="i.title.startsWith(searchVal) || searchVal == null || searchVal=='' "> -->
+  <mat-card >
+  <mat-card >{{i.title}}
+    <span style="float: right; font-weight: 700;"><label>{{i.dtm}}</label></span>
+<br><br>
+
+    <span style="">
+
+      <button
+      mat-raised-button
+    matTooltip="View Content"
+      mat-mini-fab color="primary" (click)="openDialog(i)" style="margin-bottom: 30px;" aria-label="Example icon button with a menu icon">
+        <mat-icon >remove_red_eye</mat-icon>
+      </button>
+&nbsp;&nbsp;
+
+      <button
+      mat-raised-button
+    matTooltip="Edit" mat-button  (click)="openDialogEdit(i)"  mat-mini-fab color="primary" style="margin-bottom: 30px;" aria-label="Example icon button with a menu icon">
+        <mat-icon >create</mat-icon>
+      </button>
+
+
+
+&nbsp;&nbsp;
+    <button
+    mat-raised-button
+    matTooltip="Delete"
+    mat-mini-fab   (click)="openDialogDelete(i)" color="primary" style="margin-bottom: 30px;" aria-label="Example icon button with a menu icon">
+      <mat-icon >delete</mat-icon>
+    </button>
+  </span>
+</mat-card>
+</mat-card >
+
+</ng-container>
+
+
+<!-- <div style="width: 50%; float: right;"> -->
+
+  <pagination-controls [ngStyle]="{'float': 'right','color':'red'}" (pageChange)="p = $event" ></pagination-controls>
+<!-- </div> -->
+
+</div>
+
+
+
+</div>
+
+<app-practise-footer></app-practise-footer>

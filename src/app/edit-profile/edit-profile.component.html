@@ -1,0 +1,31 @@
+
+<div class="container">
+
+  <br>  <br>  <br>
+
+  <form class="example-form">
+
+  <mat-form-field class="example-form-field" style=" margin:auto;  display:block;">
+    <mat-label>Email</mat-label>
+    <input matInput type="text" disabled name = "email" [(ngModel)]="email" value=email>
+
+  </mat-form-field>
+
+  <mat-form-field class="example-form-field" style=" margin:auto;
+
+  display:block;">
+
+
+
+    <mat-label>Name</mat-label>
+    <input matInput type="text" name = "name" [(ngModel)]="name" value=name>
+
+  </mat-form-field>
+
+  <button style=" margin:auto;
+  display:block;" (click)="updateProfile()" mat-raised-button color="primary">Update
+
+</button>
+
+</form>
+</div>

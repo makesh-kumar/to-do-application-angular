@@ -1,0 +1,92 @@
+<app-practise-home></app-practise-home>
+
+<!-- <div class="bg"></div> -->
+
+<div class="con">
+
+  <br><br>
+<div class = "mobBtn" >
+  <mat-grid-list cols="4" rowHeight="2:1" style="background-color: whitesmoke; max-height: 50%;" >
+
+    <mat-grid-tile style="height: min-content;">
+    </mat-grid-tile>
+    <mat-grid-tile style="height: min-content;">
+      <button mat-raised-button color="primary" (click)="add()">
+
+        New
+        <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon></button>
+    </mat-grid-tile>
+ <mat-grid-tile>
+      <button  mat-raised-button color="primary" (click)="view()">View
+        <mat-icon aria-hidden="false" aria-label="Example home icon">view_list</mat-icon>
+      </button>
+    </mat-grid-tile>
+
+    <mat-grid-tile style="height: min-content;">
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>
+
+
+<div class = "deskBtn" >
+  <mat-grid-list cols="6" rowHeight="5:1" style="background-color: whitesmoke; max-height: 50%;" >
+
+    <mat-grid-tile style="height: min-content;">    </mat-grid-tile>
+
+    <mat-grid-tile style="height: min-content;">     </mat-grid-tile>
+
+    <mat-grid-tile style="height: min-content;">
+      <button mat-raised-button color="primary" (click)="add()">
+        New
+        <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+      </button>
+    </mat-grid-tile>
+
+
+ <mat-grid-tile>
+      <button  mat-raised-button color="primary" (click)="view()">View
+
+        <mat-icon aria-hidden="false" aria-label="Example home icon">view_list</mat-icon>
+      </button>
+    </mat-grid-tile>
+
+    <mat-grid-tile style="height: min-content;">     </mat-grid-tile>
+
+    <mat-grid-tile style="height: min-content;">     </mat-grid-tile>
+
+
+  </mat-grid-list>
+</div>
+
+<br><br>
+<div class = "addNew" style=" background-image: url('https://www.pexels.com/photo/background-blur-clean-clear-531880/');
+background-repeat: no-repeat;
+background-attachment: fixed;">
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>
+      <i class="fa fa-sticky-note-o" style="font-size: 20px; color: black ;" aria-hidden="true"> Tittle</i>
+       </mat-label>
+    <input matInput maxlength=30 style="height: 30px;" placeholder="" [(ngModel)]="data.title" name = "title">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>
+      <i class="fa fa-pencil-square-o" style="font-size: 20px; color: black ; " aria-hidden="true"> Notes</i>
+     </mat-label>
+    <textarea  rows="8" matInput placeholder="" [(ngModel)]="data.content" name = "content" ></textarea>
+  </mat-form-field>
+</form>
+<button style=" margin:auto;
+display:block;" (click)="addData()" mat-raised-button color="primary">Add</button>
+<br>
+</div>
+
+
+
+
+
+</div>
+
+<app-practise-footer></app-practise-footer>

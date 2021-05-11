@@ -1,0 +1,48 @@
+
+
+
+<div class="con">
+
+  <div mat-dialog-content class="mat-typography">
+    <form class="example-form" >
+      <mat-form-field class="example-full-width">
+        <mat-label>Title</mat-label>
+        <input matInput  value={{data.title}} [(ngModel)]="data.title" name = "title">
+      </mat-form-field>
+    <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Notes</mat-label>
+        <textarea  rows="8" style="width: 100%;"  [(ngModel)]="data.content" name = "content" matInput  value={{data.content}}></textarea>
+      </mat-form-field>
+    </form>
+  </div>
+
+</div>
+
+<!-- <h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content class="mat-typography">
+{{data.content}}
+
+</div> -->
+
+
+
+
+<!-- <button
+mat-raised-button
+matTooltip="Copy"
+mat-mini-fab color="primary" style="margin-bottom: 30px;"  (click)="openSnackBar('', '')" ngxClipboard [cbContent]= data.content aria-label="Example icon button with a menu icon">
+  <mat-icon >content_copy</mat-icon>
+</button> -->
+
+
+
+  <mat-dialog-actions style="float:right;">
+
+
+    <button  (click)="update(data)" mat-raised-button color="primary">Update</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button  class="mat-raised-button" (click)="close()">Close</button>
+</mat-dialog-actions>
+
+

@@ -1,0 +1,61 @@
+
+<app-practise-home></app-practise-home>
+
+
+
+<div class="con">
+
+
+
+
+
+  <div class="example-button-row">
+
+    <mat-form-field class="example-form-field">
+      <mat-label>Enter word </mat-label>
+      <input matInput type="text" [(ngModel)]="word">
+      <button mat-button *ngIf="word" matSuffix mat-icon-button aria-label="Clear" (click)="word=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+&nbsp;&nbsp;&nbsp;
+    <button mat-flat-button color="primary" (click)="getDict()">Search</button>
+
+<br>
+
+
+<ng-container *ngIf="show">
+
+  <mat-card>
+    <br><br><br>   <br> <br><br>  <br><br>  <br>
+    <p style="text-align: center; font-weight: 800;"> No Result found </p>
+    <br> <br><br>   <br> <br><br> <br> <br>  <br>
+  </mat-card>
+</ng-container>
+
+<mat-card *ngIf=" !show">
+  <!-- <div *ngFor="let item of list; let i = index;"></div> -->
+  <ng-container *ngFor="let i of Dict ;let ind = index;" >
+    <ng-container *ngIf= "  i.fl!='phrase'"  >
+      <!-- <input matInput type="text" name="prev" [(ngModel)]="prev" value ="noun">
+
+{{prev}} -->
+     <p style="font-weight: 700; font-style: italic;"> {{i.fl}}   </p>
+      {{i.shortdef}}
+  <hr>
+    </ng-container>
+
+
+        </ng-container>
+
+
+</mat-card>
+
+
+  </div>
+
+</div>
+
+
+
+<app-practise-footer></app-practise-footer>

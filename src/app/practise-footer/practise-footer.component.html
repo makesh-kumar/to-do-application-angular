@@ -1,0 +1,60 @@
+
+
+
+<div class="con">
+
+
+  <mat-grid-list cols="6" rowHeight="3:2" class = "H">
+
+    <div style="margin-top: 300px;" >
+      <br>       <br>
+      <h3 style="color:white; text-align: center; font-weight: bold;">Follow Me</h3>
+    </div>
+
+    <mat-grid-tile class = "H">
+      <a href = "https://www.facebook.com"target="_blank"  (mouseover)="fhover=true" (mouseleave)="fhover=false" >
+        <i class="fa fa-facebook"   [ngStyle]="{color: fhover==true  ? 'red' : 'white' }" style="font-size: 20px; color: white ;" aria-hidden="true"></i>
+       </a>
+    </mat-grid-tile>
+
+
+
+    <mat-grid-tile class = "H">
+      <a  href="https://wa.me/9095774441?text=Hello%20Makesh"target="_blank" (mouseover)="ehover=true" (mouseleave)="ehover=false" >
+        <i class="fa fa-whatsapp"  [ngStyle]="{color: ehover==true  ? 'red' : 'white' }" style="font-size: 20px; color: white" aria-hidden="true"></i>
+       </a>
+    </mat-grid-tile>
+
+    <mat-grid-tile class = "H">
+      <a  href = "https://twitter.com/" target="_blank" (mouseover)="ahover=true" (mouseleave)="ahover=false">
+        <i class="fa fa-twitter" [ngStyle]="{color: ahover==true  ? 'red' : 'white' }" style="font-size: 20px; color: white" aria-hidden="true"></i>
+       </a>
+    </mat-grid-tile>
+    <mat-grid-tile class = "H">
+      <a  href = "https://www.youtube.com"  target="_blank" (mouseover)="bhover=true" (mouseleave)="bhover=false">
+        <i class="fa fa-youtube-play"  [ngStyle]="{color: bhover==true  ? 'red' : 'white' }" style="font-size: 20px; color: white" aria-hidden="true"></i>
+       </a>
+    </mat-grid-tile>
+    <mat-grid-tile class = "H">
+      <a   href="mailto: mynameismakesh@gmail.com" target="_blank" (mouseover)="chover=true" (mouseleave)="chover=false">
+        <i class="fa fa-envelope"  [ngStyle]="{color: chover==true  ? 'red' : 'white' }" style="font-size: 20px; color: white" aria-hidden="true"></i>
+       </a>
+    </mat-grid-tile>
+
+    <mat-grid-tile class = "H">
+      <a  href="tel:+919095774441" target="_blank" (mouseover)="dhover=true" (mouseleave)="dhover=false">
+        <i class="fa fa-phone"  [ngStyle]="{color: dhover==true  ? 'red' : 'white' }" style="font-size: 20px; color: white" aria-hidden="true"></i>
+       </a>
+    </mat-grid-tile>
+
+
+
+
+
+
+  </mat-grid-list>
+
+
+  <mat-card style="text-align: center; font-weight: bold;"><a [routerLink]="['/news']" routerLinkActive="router-link-active" >😉</a  > Developed By Makesh <a [routerLink]="['/news2']" routerLinkActive="router-link-active">😍</a> </mat-card>
+
+</div>
