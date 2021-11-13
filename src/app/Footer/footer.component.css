@@ -1,0 +1,17 @@
+.bg-rebeccapurple {
+  background-color: rebeccapurple;
+  margin: 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 2px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 2px;
+}
+
+.btn[class*="btn-outline-"]:hover {
+  color: rebeccapurple !important;
+}
+
+footer {
+  font-family: cursive;
+font-variant: small-caps;
+font-kerning: none;
+}

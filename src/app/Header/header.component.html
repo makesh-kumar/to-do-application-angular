@@ -1,0 +1,72 @@
+<div class="nav-bar">
+  <!--Navbar for desktop-->
+  <div class="nav-bar__desktop">
+    <mat-toolbar class="brand__title">
+      <button mat-icon-button (click)="goHome()">
+        <!-- <img src="favicon (1).ico"> -->
+        <span class="brand__icon">Makesh</span>
+      </button>
+      <span class="nav-bar__spacer"></span>
+      <button mat-button (click)="goHome()" class="nav-bar__icon">
+        <mat-icon aria-hidden="false" aria-label="Home">home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-button (click)="goSettings()" class="nav-bar__icon">
+        <mat-icon aria-hidden="false" aria-label="Settings">settings</mat-icon>
+        <span>Settings</span>
+      </button>
+      <button mat-button (click)="goProfile()" class="nav-bar__icon">
+        <mat-icon aria-hidden="false" aria-label="Profile">person</mat-icon>
+        <span>Profile</span>
+      </button>
+      <button mat-button (click)="logout()" class="nav-bar__icon">
+        <mat-icon aria-hidden="false" aria-label="Logout">exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-toolbar>
+  </div>
+
+  <!--Navbar for mobile-->
+  <div class="nav-bar__mobile">
+    <mat-toolbar class="brand__title">
+      <button (click)="goHome()" mat-icon-button class="nav-bar__icon">
+        <!-- <img src="favicon (1).ico" width="50%">  -->
+        <span class="brand__icon">Makesh</span>
+      </button>
+      <span class="nav-bar__spacer"></span>
+      <button mat-button (click)="showMobNavBar()">
+        <mat-icon aria-hidden="false" aria-label="Menu">menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+      </mat-menu>
+    </mat-toolbar>
+
+    <mat-list *ngIf=isMobileNavBar>
+      <div class="divider"></div>
+      <mat-list-item>
+        <button (click)="goHome()" mat-button class="btn__list">
+          <mat-icon aria-hidden="false" aria-label="Home">home</mat-icon>
+          <span>Home</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button (click)="goProfile()" class="btn__list">
+          <mat-icon aria-hidden="false" aria-label="Profile">person</mat-icon>
+          <span>Profile</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button (click)="goSettings()" mat-button class="btn__list">
+          <mat-icon aria-hidden="false" aria-label="Settings">settings</mat-icon>
+          <span>Settings</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button class="btn__list" (click)="logout()">
+          <mat-icon aria-hidden="false" aria-label="Logout">exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

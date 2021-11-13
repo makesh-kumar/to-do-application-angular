@@ -1,4 +1,4 @@
-export class Tododata {
+export interface ITododata {
   dataId: number;
   userId: string;
   title: string;

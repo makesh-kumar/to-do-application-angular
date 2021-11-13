@@ -1,10 +1,8 @@
-export class Signup {
-
-   signupid: number;
-   userid: string;
-   name: string;
-   email: string;
-   pass: string;
-   conpass: string;
+export interface ISignup {
+  signupid: number;
+  userId: string;
+  name: string;
+  email: string;
+  pass: string;
+  conpass: string;
 }
-

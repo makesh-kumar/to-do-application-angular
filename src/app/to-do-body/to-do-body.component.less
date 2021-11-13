@@ -1,0 +1,150 @@
+.btn-outline-success {
+  color: rebeccapurple !important;
+  border: 2px solid rebeccapurple !important;
+}
+.btn-outline-success:hover {
+  color: white !important;
+  background-color: rebeccapurple !important;
+}
+.card:not([class*="card-outline-"]) {
+  border-radius: 0px;
+  margin-bottom: 10px;
+  -moz-box-shadow: 3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow: 3px 3px 5px 6px #ccc;
+}
+
+.btn-secondary {
+  background-color: rebeccapurple !important;
+}
+
+.body {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  .btn-outline-success {
+    color: rebeccapurple !important;
+    border: 2px solid rebeccapurple !important;
+  }
+  .btn-outline-success:hover {
+    color: white !important;
+    background-color: rebeccapurple !important;
+  }
+}
+
+.add__section {
+  padding: 10px;
+  height: 60vh;
+  .section__input {
+    display: flex;
+    flex-direction: column;
+  }
+  input {
+    height: 2px;
+    border-color: rebeccapurple;
+  }
+  input[type="text"]:focus:not([readonly]) {
+    border-bottom: 1px solid rebeccapurple;
+    box-shadow: 0 1px 0 0 rebeccapurple;
+    border-width: 1px;
+  }
+
+  textarea {
+    height: 100px;
+    padding: 10px;
+    border-color: rebeccapurple;
+  }
+  .form-control:focus {
+    border-width: 2px;
+  }
+  // textarea[type=text]:focus:not([readonly]){
+  //     border-bottom: 1px solid rebeccapurple;
+  //     box-shadow: 0 1px 0 0 rebeccapurple;
+  //     border-width: 2px;
+  // }
+  .btn-outline-success {
+    color: rebeccapurple !important;
+    border: 2px solid rebeccapurple !important;
+  }
+  .btn-outline-success:hover {
+    color: white !important;
+    background-color: rebeccapurple !important;
+  }
+}
+.edit__section {
+  padding: 10px;
+  height: 60vh;
+  .card__check-box {
+    float: right;
+  }
+  .section__empty {
+    position: relative;
+    right: 10px;
+  }
+  .action__icons {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row-reverse;
+    gap: 20px;
+    a {
+      font-size: 18px;
+      color: rebeccapurple;
+      cursor: pointer;
+    }
+  }
+}
+.md-form input[type="text"]:focus {
+  box-shadow: 0 1px 0 0 rebeccapurple !important;
+
+  border-bottom: 1px solid rebeccapurple !important;
+}
+.delete__modal {
+  font-size: 18px;
+  .modal {
+    margin-top: 190px !important;
+  }
+  .modal-header {
+    padding-bottom: 0;
+    border-bottom: none;
+    align-items: baseline;
+    .close {
+      cursor: pointer;
+    }
+  }
+  .modal-footer {
+    border-top: none;
+  }
+}
+.edit__modal {
+  .modal-header {
+    padding-left: 25px;
+    padding-bottom: 0;
+    padding-right: 25px;
+    border-bottom: none;
+    margin-bottom: -30px;
+    align-items: baseline;
+    .close {
+      cursor: pointer;
+    }
+  }
+  .modal-footer {
+    border-top: none;
+  }
+  ::ng-deep.mat-checkbox-layout {
+    margin-top: 6px;
+  }
+}
+
+.example-margin {
+  .mat-checkbox-background {
+    background-color: rebeccapurple !important;
+  }
+}
+
+::ng-deep.mat-checkbox-checked.mat-primary .mat-checkbox-background {
+  background-color: rebeccapurple !important;
+}
+
+i {
+  cursor: pointer;
+}

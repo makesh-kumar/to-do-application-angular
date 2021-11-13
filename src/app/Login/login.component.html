@@ -1,0 +1,69 @@
+<div class="login">
+  <mat-card class="login-form__card">
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Login" (click)="toggleTab()">
+        <mat-card-content class="card__content" [formGroup]="loginForm">
+          <div class="form-outline">
+            <i class="fas fa-user index__icon"></i>
+            <input type="text" id="form1" class="form-control" formControlName="emailId" placeholder="User Name" />
+            <p *ngIf="isFieldInvalid('emailId')" class="error__message">Please enter email</p>
+          </div>
+          <div class="form-outline">
+            <i class="fas fa-unlock index__icon"></i>
+            <input [type]="loginPassType" id="form1" formControlName="password" class="form-control"
+              placeholder="Password" />
+            <p *ngIf="isFieldInvalid('password')" class="error__message">Please enter password</p>
+            <a *ngIf="isShowLoginPassword" href="#!" (click)="showLoginPassword()" role="button"><i
+                class="fas fa-eye hint__icon"></i></a>
+            <a *ngIf="!isShowLoginPassword" href="#!" (click)="showLoginPassword()" role="button"><i
+                class="fas fa-eye-slash hint__icon"></i></a>
+          </div>
+          <button (click)="submitForm()" type="button" class="btn btn-outline-success btn-floating"
+            data-mdb-ripple-color="red">
+            <i class="fas fa-sign-in-alt"></i>
+            Login
+          </button>
+        </mat-card-content>
+      </mat-tab>
+      <mat-tab label="Register" (click)="toggleTab()">
+        <mat-card-content class="card__content" [formGroup]="registerForm">
+          <div class="form-outline">
+            <i class="fas fa-user index__icon"></i>
+            <input type="text" id="form1" formControlName="name" class="form-control" placeholder="Full Name" />
+            <p *ngIf="isRegisterFieldValid('name')" class="error__message">Please enter full name</p>
+          </div>
+          <div class="form-outline">
+            <i class="fas fa-envelope-square index__icon"></i>
+            <input type="text" formControlName="emailId" id="form1" class="form-control" placeholder="Email" />
+            <p *ngIf="isRegisterFieldValid('emailId')" class="error__message">Please enter valid email</p>
+          </div>
+          <div class="form-outline">
+            <i class="fas fa-unlock index__icon"></i>
+            <input [type]="registerPassType" id="form1" formControlName="password" class="form-control"
+              placeholder="Password" />
+            <p *ngIf="isRegisterFieldValid('password')" class="error__message">Password should contain min 6 chars</p>
+            <a *ngIf="!isShowRegisterPassword" href="#!" (click)="showRegisterPassword()" role="button"><i
+                class="fas fa-eye hint__icon"></i></a>
+            <a *ngIf="isShowRegisterPassword" href="#!" (click)="showRegisterPassword()" role="button"><i
+                class="fas fa-eye-slash hint__icon"></i></a>
+          </div>
+          <div class="form-outline">
+            <i class="fas fa-unlock index__icon"></i>
+            <input [type]="registerConfirmPassType" id="form1" formControlName="confirmPassword" class="form-control"
+              placeholder="Confirm Password" />
+            <p *ngIf="isConfirmPasswordMatches()" class="error__message">Password Mismatch</p>
+            <a *ngIf="!isShowRegisterConfirmPassword" href="#!" (click)="showRegisterConfirmassword()" role="button"><i
+                class="fas fa-eye hint__icon"></i></a>
+            <a *ngIf="isShowRegisterConfirmPassword" href="#!" (click)="showRegisterConfirmassword()" role="button"><i
+                class="fas fa-eye-slash hint__icon"></i></a>
+          </div>
+          <button (click)="submitRegisterForm()" type="button" class="btn btn-outline-success btn-floating"
+            data-mdb-ripple-color="red">
+            <i class="far fa-check-circle"></i>
+            Register
+          </button>
+        </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>

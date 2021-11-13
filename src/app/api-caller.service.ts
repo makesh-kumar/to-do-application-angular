@@ -1,10 +1,10 @@
-import { Signup } from './Model/signup';
-import { Tododata } from './Model/tododata';
+import { ISignup } from './Model/signup';
+import { ITododata } from './Model/Tododata';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
-import { LoginData } from './Model/login-data';
+// import { ILoginData } from './Model/login-data';
 import { catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
@@ -13,8 +13,8 @@ export class ApiCallerService {
   baseUrl: string;
   constructor(private http: HttpClient, private router: Router) {
 
-    // this.baseUrl = 'https://mydemoapi.herokuapp.com';
-    this.baseUrl = 'http://localhost:8080'
+    this.baseUrl = 'https://mydemoapi.herokuapp.com';
+    // this.baseUrl = 'http://localhost:8080'
   }
 
 
@@ -60,41 +60,41 @@ public getData(userId: string): Observable<any>
 }
 
 
-public addData(data: Tododata) {
-  return this.http.post<Tododata>(this.baseUrl + '/addData', data).pipe(
+public addData(data: ITododata) {
+  return this.http.post<ITododata>(this.baseUrl + '/addData', data).pipe(
     catchError(
       this.handleErr
     )
   );
 }
 
-public login(data: LoginData ){
+// public login(data: ILoginData ){
+// // 
 
-
-  return this.http.post<LoginData>(this.baseUrl + '/login', data).pipe(
-    catchError(
-      this.handleErr
-    )
-  );
-}
+//   return this.http.post<ILoginData>(this.baseUrl + '/login', data).pipe(
+//     catchError(
+//       this.handleErr
+//     )
+//   );
+// }
 
 public isUser(email:string){
-  return this.http.get<Signup>(this.baseUrl + '/isUser/'+email ).pipe(
+  return this.http.get<ISignup>(this.baseUrl + '/isUser/'+email ).pipe(
     catchError(
       this.handleErr
     )
   );
 }
 
-public updateProfile(s:Signup){
-  return this.http.post<Signup>(this.baseUrl + '/updateProfile', s).pipe(
+public updateProfile(s:ISignup){
+  return this.http.post<ISignup>(this.baseUrl + '/updateProfile', s).pipe(
     catchError(
       this.handleErr
     )
   );
 }
-public changePassword(s:Signup){
-  return this.http.post<Signup>(this.baseUrl + '/changePassword', s).pipe(
+public changePassword(s:ISignup){
+  return this.http.post<ISignup>(this.baseUrl + '/changePassword', s).pipe(
     catchError(
       this.handleErr
     )
@@ -145,18 +145,18 @@ public getMovie(word: string): Observable<any> {
 
 
 
-public sign(data: Signup) {
+public sign(data: ISignup) {
 
-  return this.http.post<Signup>(this.baseUrl + '/signUp', data).pipe(
+  return this.http.post<ISignup>(this.baseUrl + '/signUp', data).pipe(
     catchError(
       this.handleErr
     )
   );
 }
-public deleteData(data: Tododata) {
+public deleteData(data: ITododata) {
 
 
-  return this.http.post<Tododata>(this.baseUrl + '/deleteData', data).pipe(
+  return this.http.post<ITododata>(this.baseUrl + '/deleteData', data).pipe(
     catchError(
       this.handleErr
     )

@@ -1,7 +1,4 @@
-export class LoginData {
-
-
-  public email: string;
-  public password: string;
-
+export interface IILoginData {
+  emailId: string;
+  password: string;
 }

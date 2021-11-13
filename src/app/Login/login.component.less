@@ -1,0 +1,94 @@
+.login {
+  background-image: url("https://images.pexels.com/photos/934062/pexels-photo-934062.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin: 10px;
+  .login-form__card {
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    background: transparent;
+    ::ng-deep.mat-tab-label .mat-tab-label-content {
+      color: white;
+    }
+    .card__content {
+      text-align: center;
+    }
+    input {
+      padding: 20px 0 0 24px;
+    }
+    input {
+      border-color: rebeccapurple;
+    }
+    input:focus:not([readonly]) {
+      border-bottom: 1px solid rebeccapurple;
+      box-shadow: 0 1px 0 0 rebeccapurple;
+      border-width: 1px;
+      box-shadow: 0px 5px 10px 0px;
+    }
+    .btn-outline-success {
+      color: rebeccapurple !important;
+      border: 2px solid rebeccapurple !important;
+      margin-top: 12px;
+    }
+    .btn-outline-success:hover {
+      color: white !important;
+      background-color: rebeccapurple !important;
+    }
+    ::ng-deep.mat-tab-labels {
+      display: flex;
+      background: rebeccapurple;
+      color: white !important;
+    }
+  }
+  .mat-card:not([class*="mat-elevation-z"]) {
+    box-shadow: none;
+  }
+  .mat-tab-group {
+    margin-bottom: 48px;
+  }
+  ::ng-deep.mat-tab-header {
+    box-shadow: 0px 5px 10px 0px;
+  }
+  ::ng-deep .mat-tab-label-container {
+    background-color: rebeccapurple;
+  }
+  ::ng-deep .mat-tab-body-content {
+    overflow: hidden !important;
+  }
+  .pass__icon {
+    position: relative;
+    bottom: 40px;
+    right: 20px;
+  }
+  .index__icon {
+    position: relative;
+    top: 54px;
+    right: 46%;
+    color: rebeccapurple;
+    font-size: 18px;
+  }
+  .form-outline {
+    margin-top: -25px !important;
+  }
+  .hint__icon {
+    position: relative;
+    bottom: 50px;
+    left: 40%;
+    color: rebeccapurple;
+    font-size: 18px;
+  }
+  .error__message {
+    color: red;
+    font-style: italic;
+    float: left;
+    display: contents;
+  }
+}

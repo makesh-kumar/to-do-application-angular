@@ -1,0 +1,145 @@
+<app-header></app-header>
+<div class="body">
+  <div class="body__add">
+    <button (click)="showAdd()" type="button" class="btn btn-outline-success btn-floating" data-mdb-ripple-color="red">
+      <i class="fas fa-plus"></i>
+      Add New ToDo
+    </button>
+  </div>
+  <div class="body__view">
+    <button (click)="showView()" type="button" class="btn btn-outline-success btn-floating" data-mdb-ripple-color="red">
+      <i class="far fa-list-alt"></i>
+      View
+    </button>
+  </div>
+</div>
+
+<div class="add__section" *ngIf="showAddSection">
+  <div class="card">
+    <div class="card-body">
+      <div class="section__input" [formGroup]="toDoForm">
+        <div class="form-outline">
+          <label class="form-label" for="form1">About</label>
+          <input type="text" id="form1" formControlName="title" class="form-control" />
+        </div>
+        <div class="form-outline">
+          <label class="form-label" for="textAreaExample">Description</label>
+          <textarea class="form-control" formControlName="description" id="textAreaExample" rows="4"></textarea>
+        </div>
+      </div>
+      <button (click)="addToDo()" type="button" class="btn btn-outline-success btn-floating"
+        data-mdb-ripple-color="red">
+        <i class="far fa-save"></i>
+        Save
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="edit__section" *ngIf="showViewSection">
+  <div class="col-sm-6" *ngIf="isToDoListEmpty">
+    <div class="card section__empty">
+      <div class="card-body">
+        No Notes Added
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="!isToDoListEmpty">
+    <ng-container *ngFor="let item of viewData">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{item.title}} <span matTooltip="Completed" class="card__check-box">
+                <mat-checkbox class="example-margin" [checked]="true" [color]=" 'primary'" disabled>
+                </mat-checkbox>
+              </span> </h5>
+            <p class="card-text">
+              {{item.content}}
+            </p>
+            <div class="action__icons">
+              <a href="#!" (click)="showInfo(item.dtm)" [matTooltip]=item.dtm role="button"><i
+                  class="fas fa-info-circle"></i></a>
+              <a href="#!" (click)="showConfirmDelete(item)" matTooltip="Delete" data-toggle="modal"
+                data-target="#deleteModal" role="button"><i class="fas fa-trash"></i></a>
+              <a href="#!" (click)="copyContent()" ngxClipboard [cbContent]=item.content matTooltip="Copy"
+                role="button"><i class="far fa-copy "></i></a>
+              <a href="#!" matTooltip="Edit" role="button" data-toggle="modal" data-target="#editModal"><i
+                  class="fas fa-edit"></i></a>
+              <a href="#!" (click)="downloadInnerHtml(item)" matTooltip="Download" role="button"><i
+                  class="fas fa-download"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<!--Delete Modal-->
+<div class="delete__modal">
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLongTitle">Confirm Delete</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button (click)="deleteToDo()" data-dismiss="modal" type="button"
+            class="btn btn-outline-success btn-floating">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Edit Modal-->
+<div class="edit__modal">
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title w-100" id="myModalLabel">EDIT</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="add__section">
+            <div class="card">
+              <div class="card-body">
+                <div class="section__input">
+                  <div class="form-outline">
+                    <label class="form-label" for="form1">About</label>
+                    <input type="text" id="form1" class="form-control" />
+                  </div>
+                  <div class="form-outline">
+                    <label class="form-label" for="textAreaExample">Description</label>
+                    <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-outline-success btn-floating" data-mdb-ripple-color="red">
+                  <i class="far fa-save"></i>
+                  Update
+                </button>
+                <mat-checkbox class="example-margin" [checked]="false" [color]=" 'primary' ">Mark as completed
+                </mat-checkbox>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
