@@ -1,5 +1,5 @@
 import { ISignup } from './Model/signup';
-import { ITododata } from './Model/Tododata';
+// import { ITododata } from './Model/Tododata';
 import { Injectable } from '@angular/core';
 import {
   HttpClient,
@@ -50,9 +50,9 @@ export class ApiCallerService {
       .pipe(catchError(this.handleErr));
   }
 
-  public addData(data: ITododata) {
+  public addData(data) {
     return this.http
-      .post<ITododata>(this.baseUrl + '/addData', data)
+      .post(this.baseUrl + '/addData', data)
       .pipe(catchError(this.handleErr));
   }
 
@@ -116,9 +116,9 @@ export class ApiCallerService {
       .post<ISignup>(this.baseUrl + '/signUp', data)
       .pipe(catchError(this.handleErr));
   }
-  public deleteData(data: ITododata) {
+  public deleteData(data) {
     return this.http
-      .post<ITododata>(this.baseUrl + '/deleteData', data)
+      .post(this.baseUrl + '/deleteData', data)
       .pipe(catchError(this.handleErr));
   }
 
