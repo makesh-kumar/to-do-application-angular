@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import swal from 'Sweetalert';
 import { Router } from '@angular/router';
 import { LocalStorage } from '@ngx-pwa/local-storage';
 @Component({
@@ -21,18 +20,23 @@ export class HeaderComponent implements OnInit {
   }
 
   logout(): void {
-    swal({
-      text: 'Are you sure ?',
-      buttons: ['No', 'Yes, Logout'],
-    }).then((result) => {
-      if (result) {
-        localStorage.clear();
-        this.router.navigate(['/login']);
-        swal('Logout Success !', {
-          timer: 3000,
-        });
-      }
-    });
+    if (confirm('Are you sure ? ')) {
+      localStorage.clear();
+      this.router.navigate(['/login']);
+    }
+
+    // swal({
+    //   text: 'Are you sure ?',
+    //   buttons: ['No', 'Yes, Logout'],
+    // }).then((result) => {
+    //   if (result) {
+    //     localStorage.clear();
+    //     this.router.navigate(['/login']);
+    //     swal('Logout Success !', {
+    //       timer: 3000,
+    //     });
+    //   }
+    // });
   }
 
   goHome(): void {
