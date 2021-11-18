@@ -1,6 +1,7 @@
 # MakeshOnline
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
+A small application to keep track our regular to do tasks (it contains onlt UI, currently working on backend part in node js & express js)
+Check the app here : https://to-do-app-ui-makesh.netlify.app/
 
 ## Development server
 
