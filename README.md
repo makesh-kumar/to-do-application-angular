@@ -1,6 +1,6 @@
 # MakeshOnline
 
-A small application to keep track our regular to do tasks (it contains onlt UI, currently working on backend part in node js & express js)
+A small application to keep track of our regular to-do tasks (it contains only UI, currently working on backend part in node js & express js)
 Check the app here : https://to-do-app-ui-makesh.netlify.app/
 
 ## Development server
